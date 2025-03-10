@@ -6,8 +6,8 @@ public class Main {
         while (money <= 2_459_000) {
             money += 15_000;
             month += 1;
+            System.out.println("Месяц " + month + ", сумма накоплений равна " + money + " рублей");
         }
-        System.out.println("Месяц " + month + ", сумма накоплений равна " + money + " рублей");
         //2
         int number = 0;
         while (number != 10) {
@@ -26,14 +26,23 @@ public class Main {
             peoples = peoples + ((peoples / 1_000) * (17 - 8));
             System.out.println("Год " + year + ", численность населения составляет " + peoples);
         }
-        //4-5
+        //4
         int firstMoney = 15_000;
         int month1 = 0;
         while (firstMoney <= 12_000_000) {
             firstMoney = firstMoney + firstMoney / 100 * 7;
             month1 += 1;
-            if (month1 % 6 == 0) {
-                System.out.println("За " + month1 + " месяц, сумма накоплений равна " + firstMoney);
+            System.out.println("За " + month1 + " месяц, сумма накоплений равна " + firstMoney);
+        }
+
+        //5
+        int money1 = 15_000;
+        int month3 = 0;
+        while (money1 <= 12_000_000) {
+            money1 = money1 + money1 / 100 * 7;
+            month3 += 1;
+            if (month3 % 6 == 0) {
+                System.out.println("За " + month3 + " месяц, сумма накоплений равна " + money1);
             }
         }
         //6
@@ -47,21 +56,24 @@ public class Main {
             }
         }
         //7
-        int friday = 5;
+        int friday = 7;
         int monthDays = 0;
         int weeks = 0;
-        while (monthDays < 31) {
+        while (monthDays <= 31) {
             if (monthDays == friday) {
                 System.out.println("Сегодня пятница, " + monthDays + "-е число. Необходимо подготовить отчет");
             }
-            else if (friday == monthDays - weeks){
+            else if (monthDays == friday + weeks){
                 System.out.println("Сегодня пятница, " + monthDays + "-е число. Необходимо подготовить отчет");
             }
             monthDays += 1;
 
-            if (monthDays % 7 == 0) {
+            if (monthDays % 7 == 0 && friday != 7) {
                 weeks +=7;
-
+            }
+            else if (monthDays >= 8 && friday % 7 == 0){
+                friday += 7;
+                monthDays = friday;
             }
 
         }
