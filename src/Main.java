@@ -1,89 +1,69 @@
 public class Main {
     public static void main(String[] args) {
-        //1
-        int money = 0;
-        int month = 0;
-        while (money <= 2_459_000) {
-            money += 15_000;
-            month += 1;
-            System.out.println("Месяц " + month + ", сумма накоплений равна " + money + " рублей");
-        }
-        //2
-        int number = 0;
-        while (number != 10) {
-            number += 1;
-            System.out.print(number + " ");
-        }
-        System.out.println();
-        for (int num = 10; num >= 1; num--) {
-            System.out.print(num + " ");
-        }
-        //3
-        int peoples = 12_000_000;
-        int year = 0;
-        while (year != 10) {
-            year++;
-            peoples = peoples + ((peoples / 1_000) * (17 - 8));
-            System.out.println("Год " + year + ", численность населения составляет " + peoples);
-        }
-        //4
-        int firstMoney = 15_000;
-        int month1 = 0;
-        while (firstMoney <= 12_000_000) {
-            firstMoney = firstMoney + firstMoney / 100 * 7;
-            month1 += 1;
-            System.out.println("За " + month1 + " месяц, сумма накоплений равна " + firstMoney);
-        }
+        // 1
+        int[] numbers = new int[3];
+        numbers[0] = 1;
+        numbers[1] = 2;
+        numbers[2] = 3;
+        float[] floatNumbers = {1.57f, 7.654f, 9.986f};
+        int[] anyNumbers = {15, 42, 52, 12};
 
-        //5
-        int money1 = 15_000;
-        int month3 = 0;
-        while (money1 <= 12_000_000) {
-            money1 = money1 + money1 / 100 * 7;
-            month3 += 1;
-            if (month3 % 6 == 0) {
-                System.out.println("За " + month3 + " месяц, сумма накоплений равна " + money1);
+        // 2
+        for (int number : numbers) {
+            System.out.print(number);
+            if (number != numbers[numbers.length - 1]) {
+                System.out.print(", ");
             }
         }
-        //6
-        int secondMoney = 15_000;
-        int month2 = 0;
-        while (month2 < 108) {
-            secondMoney = secondMoney + secondMoney / 100 * 7;
-            month2 += 1;
-            if (month2 % 6 == 0) {
-                System.out.println("За " + month2 + " месяц, сумма накоплений равна " + secondMoney);
+        System.out.print("\n");
+        for (float floatNumber : floatNumbers) {
+            System.out.print(floatNumber);
+            if (floatNumber != floatNumbers[floatNumbers.length - 1]) {
+                System.out.print(", ");
             }
         }
-        //7
-        int friday = 7;
-        int monthDays = 0;
-        int weeks = 0;
-        while (monthDays <= 31) {
-            if (monthDays == friday) {
-                System.out.println("Сегодня пятница, " + monthDays + "-е число. Необходимо подготовить отчет");
+        System.out.print("\n");
+        for (int myNumber : anyNumbers) {
+            System.out.print(myNumber);
+            if (myNumber != anyNumbers[anyNumbers.length - 1]) {
+                System.out.print(", ");
             }
-            else if (monthDays == friday + weeks){
-                System.out.println("Сегодня пятница, " + monthDays + "-е число. Необходимо подготовить отчет");
-            }
-            monthDays += 1;
+        }
+        System.out.print("\n");
 
-            if (monthDays % 7 == 0 && friday != 7) {
-                weeks +=7;
+        // 3
+        for (int i = numbers.length - 1; i >= 0; i--) {
+            System.out.print(numbers[i]);
+            if (i > 0) {
+                System.out.print(", ");
             }
-            else if (monthDays >= 8 && friday % 7 == 0){
-                friday += 7;
-                monthDays = friday;
-            }
-
         }
-        //8
-        int thisYear = 2025;
-        int comet = 79;
-        while (comet < thisYear + 100){
-            comet += 79;
-            if (comet > thisYear - 200 && comet < thisYear + 100){
-                System.out.println(comet);
+        System.out.print("\n");
+        for (int i = floatNumbers.length - 1; i >= 0; i--) {
+            System.out.print(floatNumbers[i]);
+            if (i > 0) {
+                System.out.print(", ");
+            }
+        }
+        System.out.print("\n");
+        for (int i = anyNumbers.length - 1; i >= 0; i--) {
+            System.out.print(anyNumbers[i]);
+            if (i > 0) {
+                System.out.print(", ");
+            }
+        }
+        System.out.print("\n");
+
+        // 4
+        for (int i = 0; i < numbers.length; i++) {
+            if (numbers[i] % 2 != 0){
+                numbers[i] += 1;
+            }
+        }
+        for (int number : numbers) {
+            System.out.print(number);
+            if (number != numbers[numbers.length - 1]) {
+                System.out.print(", ");
             }
         }
     }
