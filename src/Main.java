@@ -25,7 +25,7 @@ public class Main {
         for (int i = 0; i < monthMoney.length; i++){
             allMoney += monthMoney[i];
         }
-        float mediumMoney = allMoney / 5;
+        float mediumMoney = allMoney / monthMoney.length;
         System.out.println("Средняя сумма трат за месяц составила " + mediumMoney + " рублей");
         //4
         char[] reverseFullName = { 'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
