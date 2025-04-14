@@ -1,54 +1,19 @@
 public class Main {
-    public static void checkYear(int year) {
-        if (year < 1584) {
-            System.out.println((year + " год не является високосным"));
-        } else if (year % 100 == 0 && year % 400 != 0 || year % 4 != 0) {
-            System.out.println((year + " год не является високосным"));
-        } else if (year % 4 == 0 || year % 400 == 0) {
-            System.out.println((year + " год является високосным"));
-        }
-
-    }
-
-    public static void checkVersion(int clientOS, int yearPhone) {
-        if (yearPhone < 2015 && clientOS == 0) {
-            System.out.println("Установите облегченную версию приложения для iOS по ссылке");
-        } else if (clientOS == 0) {
-            System.out.println("Установите версию приложения для iOS по ссылке");
-        }
-
-        if (yearPhone < 2015 && clientOS == 1) {
-            System.out.println("Установите облегченную версию приложения для Android по ссылке");
-        } else if (clientOS == 1) {
-            System.out.println("Установите версию приложения для Android по ссылке");
-        }
-    }
-
-    public static int checkDelivery(int deliveryDistance) {
-        int days = 0;
-        if (deliveryDistance < 20) {
-            days = 1;
-        } else if (deliveryDistance < 60) {
-            days = days + 2;
-        } else if (deliveryDistance < 100) {
-            days = days + 3;
-        }
-        return days;
-    }
-
     public static void main(String[] args) {
-        //1
-        int year = 2021;
-        checkYear(year);
 
-        //2
-        int clientOS = 0;
-        int yearPhone = 2020;
-        checkVersion(clientOS, yearPhone);
+        Author author1 = new Author("Александр", "Пушкин");
+        Author author2 = new Author("Лев", "Толстой");
 
-        //3
-        int deliveryDistance = 100;
-        System.out.println(checkDelivery(deliveryDistance));
+        Book book1 = new Book("Евегений Онегин", author1, 1820);
+        Book book2 = new Book("Война и мир", author2, 1868);
 
+        System.out.println("book1.getYear() = " + book1.getYear());
+        book1.setYear(1984);
+        System.out.println("book1.getYear() = " + book1.getYear());
+        System.out.println("book1.getTitle() = " + book1.getTitle());
+        System.out.println("book1.getAuthor() = " + book1.getAuthor().getName() + " " + book1.getAuthor().getSurname());
+        System.out.println("book2.getTitle() = " + book2.getTitle());
+        System.out.println("book2.getAuthor() = " + book2.getAuthor().getName() + " " + book2.getAuthor().getSurname());
+        System.out.println("book2.getYear() = " + book2.getYear());
     }
 }
