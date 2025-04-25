@@ -15,5 +15,13 @@ public class Main {
         System.out.println("book2.getTitle() = " + book2.getTitle());
         System.out.println("book2.getAuthor() = " + book2.getAuthor().getName() + " " + book2.getAuthor().getSurname());
         System.out.println("book2.getYear() = " + book2.getYear());
+        System.out.println(author1.toString());
+        System.out.println(book1.toString());
+        System.out.println(book1.equals(book2));
+        System.out.println(author1.equals(author2));
+        System.out.println(book1.hashCode());
+        System.out.println(book2.hashCode());
+        System.out.println(author1.hashCode());
+        System.out.println(author2.hashCode());
     }
 }
