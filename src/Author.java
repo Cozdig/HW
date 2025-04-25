@@ -14,8 +14,9 @@ public class Author {
     public String getSurname() {
         return surname;
     }
+
     @Override
-    public String toString(){
+    public String toString() {
         return name + " " + surname;
     }
 
@@ -28,7 +29,7 @@ public class Author {
             return false;
         }
         Author c2 = (Author) other;
-        return  name.equals(c2.name) && surname.equals(c2.surname);
+        return name.equals(c2.name) && surname.equals(c2.surname);
     }
 
     @Override
